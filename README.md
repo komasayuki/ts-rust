@@ -23,7 +23,7 @@ Typescript porting of Rust's [Option](https://doc.rust-lang.org/std/option/enum.
 ## Install
 
 ```
-npm instal --save ts-rust
+$ npm instal --save ts-rust
 ```
 
 
@@ -82,6 +82,12 @@ console.log('Ok.isOk() = ', okay.isOk()); //true
 console.log('Ok.isErr() = ', okay.isErr()); //false
 ```
 
+
+## Test & Coverage
+
+```
+$ npm run test
+```
 
 ## unported functions
 
