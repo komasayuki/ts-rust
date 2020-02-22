@@ -101,7 +101,7 @@ export class RustOption<T> extends RustOptionBase<T>{
         return new RustOption<any>(undefined);
     }
 
-    constructor(val:T|undefined){
+    private constructor(val:T|undefined){
         super(val);
     }
 
@@ -405,7 +405,7 @@ export class RustResult<T, E>{
         return new RustResult<any, typeof err>(undefined, err);
     }
 
-    constructor(val:T|undefined, err:E|undefined){
+    private constructor(val:T|undefined, err:E|undefined){
         this.value = val;
         this.error = err;
     }
@@ -420,19 +420,19 @@ export class RustResult<T, E>{
 
     ok(): RustOption<T> {
         if(isUndefined(this.value)){
-            return new RustOption<any>(undefined);
+            return RustOption.None;
         }
         
-        return new RustOption<T>(this.value);
+        return RustOption.Some(this.value);
     }
 
 
     err(): RustOption<E> {
         if(isUndefined(this.value)){
-            return new RustOption<E>(this.error);
+            return RustOption.Some(this.error);
         }
         
-        return new RustOption<E>(undefined);
+        return RustOption.None;
     }
 
 
@@ -628,7 +628,7 @@ export class RustResult<T, E>{
             const result = this.value as any;
 
             if(isUndefined(result.value)){
-                return new RustOption<any>(undefined);
+                return RustOption.None;
             }
             return RustOption.Some(new RustResult<T, E>(result.value, undefined));
         }
@@ -707,7 +707,7 @@ RustOptionBase.prototype.transpose = function<T,E>():RustResult<RustOption<T>, E
     const value = this.valueOf();
 
     if(isUndefined(value)){
-        return RustResult.Ok(new RustOption<any>(undefined));
+        return RustResult.Ok(RustOption.None);
     }
 
     if(value instanceof RustResult){

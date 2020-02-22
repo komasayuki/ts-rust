@@ -493,7 +493,9 @@ describe('Option', () => {
 
         expect(none1.equals(Option.Some(10))).toBeTruthy();
         expect(none2.equals(Option.None)).toBeTruthy();
-        expect(Option.None.equals(new Option<any>(undefined))).toBeTruthy();
+
+        const none3 = Option.None;
+        expect(Option.None.equals(none3)).toBeTruthy();
 
 
     });
