@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "downlevelIteration": true
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "src/examples/*"]
+}

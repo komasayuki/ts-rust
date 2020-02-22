@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "env": { "browser":true, "node": false, "es6": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "quotes": ["warn", "single"],
+    "brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
+    "guard-for-in": ["error"],
+    "curly": ["warn"],
+    "prefer-arrow-callback": ["error", {"allowUnboundThis": false}]
+  }
+}

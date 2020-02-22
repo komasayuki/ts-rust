@@ -1,0 +1,7 @@
+src/
+jest.config.js
+tsconfig.json
+.eslintrc.json
+.eslintignore
+
+.vscode/
