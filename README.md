@@ -52,7 +52,7 @@ const nothing = Option.None;
 
 console.log('Some.unwrap() = ', something.unwrap()); //123
 
-console.log('Some.unwrapOr() = ', nothing.unwrapOr(456)); //123
+console.log('Some.unwrapOr() = ', something.unwrapOr(456)); //123
 console.log('None.unwrapOr() = ', nothing.unwrapOr(456)); //456
 
 console.log('Some.isSome() = ', something.isSome()); //true

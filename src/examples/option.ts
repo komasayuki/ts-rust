@@ -6,7 +6,7 @@ const nothing = Option.None;
 
 console.log('Some.unwrap() = ', something.unwrap()); //123
 
-console.log('Some.unwrapOr() = ', nothing.unwrapOr(456)); //123
+console.log('Some.unwrapOr() = ', something.unwrapOr(456)); //123
 console.log('None.unwrapOr() = ', nothing.unwrapOr(456)); //456
 
 console.log('Some.isSome() = ', something.isSome()); //true
@@ -22,7 +22,7 @@ catch(e){
     console.log('catch on None.expect("failed") = ', e.message); //failed
 }
 
-console.log('Some.unwrapOrElse() = ', nothing.unwrapOr(()=>567)); //123
+console.log('Some.unwrapOrElse() = ', something.unwrapOr(()=>567)); //123
 console.log('None.unwrapOrElse() = ', nothing.unwrapOr(()=>567)); //567
 
 console.log('Some.map() = ', something.map(v=>v*2).toString()); //Some(246)
@@ -111,7 +111,7 @@ console.log('Some.take() = ', something345.take().toString()); //Some(345)
 console.log('post:Some.take() = ', something345.toString()); //None
 
 
-console.log('None.take() = ', nothing.take()); //None
+console.log('None.take() = ', nothing.take().toString()); //None
 console.log('post:None.take() = ', nothing.toString()); //None
 
 
