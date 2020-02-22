@@ -23,7 +23,7 @@ Typescript porting of Rust's [Option](https://doc.rust-lang.org/std/option/enum.
 ## Install
 
 ```
-$ npm instal --save ts-rust
+$ npm install --save ts-rust
 ```
 
 
