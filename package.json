@@ -1,6 +1,6 @@
 {
   "name": "ts-rust",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Typescript porting of Rust's Option/Result",
   "author": "Masayuki Kondo <komasayuki@gmail.com>",
   "main": "./dist/index.js",
