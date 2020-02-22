@@ -23,7 +23,7 @@ Typescript porting of Rust's [Option](https://doc.rust-lang.org/std/option/enum.
 ## Install
 
 ```
-npm instal komasayuki/ts-rust
+npm instal --save ts-rust
 ```
 
 
