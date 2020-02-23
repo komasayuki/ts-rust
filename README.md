@@ -34,8 +34,57 @@ $ npm install --save ts-rust
 import {RustOption as Option, RustResult as Result} from 'ts-rust'
 ```
 
+### types
+```
+const something:Option<number> = Option.Some(123);
+const nothing:Option<number> = Option.None;
+
+const okay:Result<number, string> = Result.Ok(222);
+const error:Result<number, string> = Result.Err('failed');
+```
+
 
 ## Examples
+
+```
+import {RustOption as Option, RustResult as Result} from 'ts-rust'
+
+let latestTemperature:Option<number> = Option.None;
+const temperatureHistory:number[] = [];
+
+function setTemperature(value:number){
+    latestTemperature = Option.Some(value);
+    temperatureHistory.push(value);
+}
+
+function printLatestTemperature(){
+    latestTemperature.match({
+        Some: (v)=>console.log('latest temperature = '+ v),
+        None: ()=>console.log('no data in history')
+    });
+}
+
+function findMinusValues(){
+    const minusTemperatures = temperatureHistory.filter(v=>v<0);
+    if(minusTemperatures.length === 0){
+        return Result.Err('no minus value in history')
+    }
+    else{
+        return Result.Ok(minusTemperatures);
+    }
+}
+
+setTemperature(12);
+setTemperature(-3);
+setTemperature(5);
+
+printLatestTemperature(); //value=567
+
+const result = findMinusValues();
+result.map(v=>console.log('Too cold! temperature = ' + v)); //Too cold! temperature = -3
+```
+
+
 
 ### Option
 
