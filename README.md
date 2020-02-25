@@ -3,13 +3,13 @@
 Typescript porting of Rust's [Option](https://doc.rust-lang.org/std/option/enum.Option.html) and [Result](https://doc.rust-lang.org/std/result/enum.Result.html)
 
 
-## Peoject Goal
+## Project Goal
 - Portaing all TypeScript implementable functions from Rust's Option and Result
 - Not snake_case but camelCase
 - Debug friendly
 - No external dependency
 
-## Prerequirements
+## Pre-requirements
 - TypeScript target is ES6 or above
 
 ```json:tsconfig.json
