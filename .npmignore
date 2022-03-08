@@ -5,3 +5,4 @@ tsconfig.json
 .eslintignore
 
 .vscode/
+coverage
