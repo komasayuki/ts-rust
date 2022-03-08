@@ -28,20 +28,14 @@ interface Iterator<T> {
 
 
 
-let advancedSome:Function = ():never=>{
-    //unreachable code
-    throw new Error('unexpected advancedSome call');
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let advancedSome:any = null;
 
-let advancedOk:Function = ():never=>{
-    //unreachable code
-    throw new Error('unexpected advancedOk call');
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let advancedOk:any = null;
 
-let advancedErr:Function = ():never=>{
-    //unreachable code
-    throw new Error('unexpected advancedErr call');
-};
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+let advancedErr:any = null;
 
 
 
@@ -71,6 +65,7 @@ class OptionIterator<T> implements Iterator<T> {
 
 
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 function isFunction(v:any): v is Function{
     return typeof v === 'function';
 }
@@ -726,6 +721,7 @@ RustOptionBase.prototype.transpose = function<T,E>():RustResult<RustOption<T>, E
 }
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 RustOptionBase.prototype.toString = function<T>():string{
 
     const value = this.valueOf();
